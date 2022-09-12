@@ -16,12 +16,21 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ambv/black'
 Plug 'elzr/vim-json'
+Plug 'tmhedberg/SimpylFold'
 " Initialize plugin system
 call plug#end()
 
 " for airline theme
 set t_Co=256
 let g:airline#extensions#tabline#enabled = 1
+
+" see docstring for folded code
+let g:SimpylFold_docstring_preview = 1
+" Enable folding with the spacebar
+nnoremap <space><space> za
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
 
 " Black(Python) format the visual selection: \k
 xnoremap <Leader>k :!black -q -<CR>
