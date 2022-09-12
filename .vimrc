@@ -74,3 +74,6 @@ noremap <Space> :
 "python
 autocmd Filetype python :iabbrev ppp print("
 autocmd Filetype python :iabbrev ppf print(f"
+
+
+inoremap <tab>n <C-n>
