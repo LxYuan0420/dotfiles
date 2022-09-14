@@ -17,18 +17,20 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ambv/black'
 Plug 'elzr/vim-json'
 Plug 'tmhedberg/SimpylFold'
+Plug 'ojroques/vim-scrollstatus'
 " Initialize plugin system
 call plug#end()
 
 " for airline theme
 set t_Co=256
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_section_x = '%{ScrollStatus()}'
 
 " see docstring for folded code
 let g:SimpylFold_docstring_preview = 1
+
 " Enable folding with the spacebar
 nnoremap <space><space> za
-" Enable folding
 set foldmethod=indent
 set foldlevel=99
 
