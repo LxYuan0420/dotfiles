@@ -1,0 +1,12 @@
+# brew applications that i found useful
+# brew leaves > my_brew.txt
+# xargs brew install < my_brew.txt
+
+rectangle
+bat
+csvkit
+p7zip
+#python@3.9
+tmux
+tree
+wget
