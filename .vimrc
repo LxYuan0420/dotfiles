@@ -18,6 +18,7 @@ Plug 'ambv/black'
 Plug 'elzr/vim-json'
 Plug 'tmhedberg/SimpylFold'
 Plug 'ojroques/vim-scrollstatus'
+Plug 'LunarWatcher/auto-pairs', {'branch': 'develop'}
 " Initialize plugin system
 call plug#end()
 
@@ -64,11 +65,6 @@ inoremap kj <esc>
 
 " vanilla vim auto bracket
 " https://stackoverflow.com/questions/21316727/automatic-closing-brackets-for-vim
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
 "inoremap {<CR> {<CR>}<ESC>O
 "inoremap {;<CR> {<CR>};<ESC>O
 "set paste
