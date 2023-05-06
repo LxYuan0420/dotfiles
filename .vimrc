@@ -19,6 +19,7 @@ Plug 'elzr/vim-json'
 Plug 'tmhedberg/SimpylFold'
 Plug 'ojroques/vim-scrollstatus'
 Plug 'LunarWatcher/auto-pairs', {'branch': 'develop'}
+Plug 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
 " Initialize plugin system
 call plug#end()
 
@@ -81,3 +82,7 @@ nnoremap gj <C-W><C-J>
 nnoremap gk <C-W><C-K>
 nnoremap gl <C-W><C-L>
 
+"pydocstring
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 smarttab expandtab
+let g:pydocstring_formatter = 'numpy'
+nmap <silent> <C-_> <Plug>(pydocstring)
