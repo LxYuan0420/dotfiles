@@ -84,5 +84,9 @@ nnoremap gl <C-W><C-L>
 
 "pydocstring
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 smarttab expandtab
-let g:pydocstring_formatter = 'numpy'
+let g:pydocstring_formatter = 'google'
 nmap <silent> <C-_> <Plug>(pydocstring)
+
+"use tab or shift-tab to switch buffer
+nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
+nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
