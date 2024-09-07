@@ -14,12 +14,11 @@ Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ambv/black'
 Plug 'elzr/vim-json'
 Plug 'tmhedberg/SimpylFold'
 Plug 'ojroques/vim-scrollstatus'
 Plug 'LunarWatcher/auto-pairs', {'branch': 'develop'}
-Plug 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
+Plug 'madox2/vim-ai'
 " Initialize plugin system
 call plug#end()
 
@@ -35,9 +34,6 @@ let g:SimpylFold_docstring_preview = 1
 nnoremap <space><space> za
 set foldmethod=indent
 set foldlevel=99
-
-" Black(Python) format the visual selection: \k
-xnoremap <Leader>k :!black -q -<CR>
 
 "g to show git commit
 map <silent><Leader>g :call setbufvar(winbufnr(popup_atcursor(systemlist("cd " . shellescape(fnamemodify(resolve(expand('%:p')), ":h")) . " && git log --no-merges -n 1 -L " . shellescape(line("v") . "," . line(".") . ":" . resolve(expand("%:p")))), { "padding": [1,1,1,1], "pos": "botleft", "wrap": 0 })), "&filetype", "git")<CR>
@@ -81,11 +77,6 @@ nnoremap gh <C-W><C-H>
 nnoremap gj <C-W><C-J>
 nnoremap gk <C-W><C-K>
 nnoremap gl <C-W><C-L>
-
-"pydocstring
-autocmd FileType python setlocal tabstop=4 shiftwidth=4 smarttab expandtab
-let g:pydocstring_formatter = 'google'
-nmap <silent> <C-_> <Plug>(pydocstring)
 
 "use tab or shift-tab to switch buffer
 nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
