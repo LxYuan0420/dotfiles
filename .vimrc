@@ -18,7 +18,10 @@ Plug 'elzr/vim-json'
 Plug 'tmhedberg/SimpylFold'
 Plug 'ojroques/vim-scrollstatus'
 Plug 'LunarWatcher/auto-pairs', {'branch': 'develop'}
+Plug 'preservim/nerdtree'
 Plug 'madox2/vim-ai'
+Plug 'SirVer/ultisnips'  "Create a new file: ~/.vim/UltiSnips/cpp.snippets
+"Plug 'honza/vim-snippets' " Snippets are separated from the engine. Add this if you want them:
 " Initialize plugin system
 call plug#end()
 
@@ -81,3 +84,30 @@ nnoremap gl <C-W><C-L>
 "use tab or shift-tab to switch buffer
 nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
 nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
+
+let g:vim_ai_edit = {
+\  "engine": "complete",
+\  "options": {
+\    "model": "gpt-3.5-turbo-instruct",
+\    "endpoint_url": "https://api.openai.com/v1/completions",
+\    "max_tokens": 3000,
+\    "temperature": 1,
+\    "request_timeout": 20,
+\    "enable_auth": 1,
+\    "selection_boundary": "#####",
+\  },
+\  "ui": {
+\    "paste_mode": 1,
+\  },
+\}
+
+" ultisnips
+" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
+" - https://github.com/Valloric/YouCompleteMe
+" - https://github.com/nvim-lua/completion-nvim
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
